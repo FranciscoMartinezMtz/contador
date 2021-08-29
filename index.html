@@ -13,6 +13,9 @@
         <button class="btn btn-info">Aumentar</button>
         <button class="btn btn-danger">Disminuir</button>
         <h4 class="m-5">Contador:  <span id="span">0</span></h4>
+        <div class="box">
+            <button class="btn btn-dark">Stop Propagation</button>
+        </div>
     </div>
     <script>
         // const btnAumentar = document.querySelector('.btn-info');
@@ -27,6 +30,11 @@
                 contador++;
                 span.textContent = contador;
             }
+            if (e.target.classList.contains('btn-danger')) {
+                contador--;
+                span.textContent = contador;
+            }
+            e.stopPropagation();
         })
 
 
